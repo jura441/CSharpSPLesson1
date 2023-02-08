@@ -17,7 +17,7 @@ namespace CSharpSPLesson1
         public static extern IntPtr FindWindowW (string lpClassName, string lpWindowName);
         
         [DllImport ("user32.dll")]
-        public static extern long SendMesageW (IntPtr hWnd, uint Msg, string wParam, uint lParam);
+        public static extern long SendMesage (IntPtr hWnd, uint Msg, string wParam, uint lParam);
 
 
         const uint MB_ICONWARMIMG = 0x030;
@@ -35,6 +35,8 @@ namespace CSharpSPLesson1
         static void Main(string[] args)
 
         {
+            Process process= new Process ();
+            IntPtr mainNotepfdWindow = IntPtr.Zero;
             string caption = "";
 
             Process[] processes = Process.GetProcesses();
@@ -42,13 +44,17 @@ namespace CSharpSPLesson1
             {
                 if (p.ProcessName == "notepad")
                 {
+                    process = p;
                     caption = p.MainWindowTitle;
+                    mainNotepfdWindow = p.MainWindowHandle;
                 }
 
             }
-            Console.WriteLine(caption);
+
             IntPtr ptr = FindWindowW("notepad", caption);
-            IntPtr ptr2 = FindWindowW("notepad", "Безымянный - Блокнот");
+            //SendMesage(ptr, 0x0010, 0, ""); //закрыть блокнот задача3
+            SendMesage(ptr, 0x000C, "Новый заголовок");
+            SendMesage(mainNotepfdWindow, 0x000C, "Новый заголовок");
             Console.ReadLine();
 
             //Задача 2 самостоятельная работа

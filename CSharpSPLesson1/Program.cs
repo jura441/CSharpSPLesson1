@@ -12,12 +12,15 @@ namespace CSharpSPLesson1
     {
         [DllImport ("user32.dll")]
         public static extern int MessageBox (IntPtr hWnd, string lpText, string lpCaption, uint uType);
-        
-        [DllImport ("user32.dll")]
-        public static extern IntPtr FindWindowW (string lpClassName, string lpWindowName);
-        
-        [DllImport ("user32.dll")]
-        public static extern long SendMesage (IntPtr hWnd, uint Msg, string wParam, uint lParam);
+
+        [DllImport("user32.dll", EntryPoint = "FindWindow")]
+        public static extern IntPtr FindWindowW(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
+        public static extern IntPtr FindWindowEx(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+        public static extern long SendMessage(IntPtr hWnd, uint Msg, int wParam, string lParam);
 
 
         const uint MB_ICONWARMIMG = 0x030;
@@ -27,16 +30,17 @@ namespace CSharpSPLesson1
 
         static int MyMessageBox(int number)
         {
-            return MessageBox(IntPtr.Zero, "YES - число угадано верно," + "NO - загаданное число меньше," + "CANCEL - загаднное число больше \n Может быть вы загадали" + number.ToString(),
+            return MessageBox(IntPtr.Zero, "YES - число угадано верно," +
+                "NO - загаданное число меньше,"
+                + "CANCEL - загаднное число больше \n Может быть вы загадали" + number.ToString(),
                 "Угадай число", MB_YESNOCANCEL | MB_DEFBUTTON2);
-
         }
 
         static void Main(string[] args)
 
         {
-            Process process= new Process ();
-            IntPtr mainNotepfdWindow = IntPtr.Zero;
+            Process process = new Process();
+            IntPtr mainNotepadWindow = IntPtr.Zero;
             string caption = "";
 
             Process[] processes = Process.GetProcesses();
@@ -46,28 +50,29 @@ namespace CSharpSPLesson1
                 {
                     process = p;
                     caption = p.MainWindowTitle;
-                    mainNotepfdWindow = p.MainWindowHandle;
+                    mainNotepadWindow = p.MainWindowHandle;
                 }
 
             }
 
             IntPtr ptr = FindWindowW("notepad", caption);
-            //SendMesage(ptr, 0x0010, 0, ""); //закрыть блокнот задача3
-            SendMesage(ptr, 0x000C, "Новый заголовок");
-            SendMesage(mainNotepfdWindow, 0x000C, "Новый заголовок");
+            //SendMessage(ptr, 0x0010, 0, ""); //закрыть блокнот задача3
+            SendMessage(ptr, 0x000C, 0, "Новый заголовок");
+            SendMessage(mainNotepadWindow, 0x000C, 0, "Привет, мир блокнота");
             Console.ReadLine();
 
             //Задача 2 самостоятельная работа
 
             //2-cancel, yes- 6, no- 7
-            //MessageBox(IntPtr.Zero, "Hello World", "Title", MB_ICONWARMIMG | MB_CANCELTRYCONTINUE | MB_DEFBUTTON2);
+
+            //MessageBox(IntPtr.Zero, "Hello World ", "Title", MB_ICONWARMIMG | MB_CANCELTRYCONTINUE | MB_DEFBUTTON2);
 
             //int minNumber = 0;
             //int maxNumber = 100;
             //Random random = new Random();
             //int result = random.Next(minNumber, maxNumber);
             //int answer = 0;
-            //while((answer = MyMessageBox(result)) != 6)
+            //while ((answer = MyMessageBox(result)) != 6)
             //{
             //    if (answer == 2)
             //    {
@@ -98,7 +103,7 @@ namespace CSharpSPLesson1
             //Process[] processes = Process.GetProcesses();
             //foreach (Process p in processes)
             //{
-            //    Console.WriteLine("{0, -35} {1,10}", p.ProcessName,  p.Id);
+            //    Console.WriteLine("{0, -35} {1,10}", p.ProcessName, p.Id);
 
             //}
             //Console.ReadLine();

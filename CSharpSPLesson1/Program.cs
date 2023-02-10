@@ -44,6 +44,7 @@ namespace CSharpSPLesson1
             string caption = "";
 
             Process[] processes = Process.GetProcesses();
+            
             foreach (Process p in processes)
             {
                 if (p.ProcessName == "notepad")

@@ -30,9 +30,9 @@ namespace MangeWindow
                 }
 
             }
-            //SendMessage(mywindow.MainWindowHandle, 0x000C, "", "Я твой новый заголовок"); //переименование 
+           SendMessage(mywindow.MainWindowHandle, 0x000C, "", "Я твой новый заголовок"); //переименование 
 
-            SendMessage(mywindow.MainWindowHandle, 0x0010, "", "Я твой новый заголовок"); //закрытие окна
+           // SendMessage(mywindow.MainWindowHandle, 0x0010, "", "Я твой новый заголовок"); //закрытие окна
            Console.ReadLine();
         }
     }

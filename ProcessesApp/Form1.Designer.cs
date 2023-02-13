@@ -40,10 +40,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Thread_count = new System.Windows.Forms.Label();
+            this.Proc_Copy = new System.Windows.Forms.Label();
             this.label_startTime = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
+            this.Proc_Time = new System.Windows.Forms.Label();
+            this.start_time = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -142,23 +143,21 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Process copy";
             // 
-            // label7
+            // Thread_count
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Process ID:";
+            this.Thread_count.AutoSize = true;
+            this.Thread_count.Location = new System.Drawing.Point(440, 184);
+            this.Thread_count.Name = "Thread_count";
+            this.Thread_count.Size = new System.Drawing.Size(0, 13);
+            this.Thread_count.TabIndex = 10;
             // 
-            // label8
+            // Proc_Copy
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(440, 230);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Process ID:";
+            this.Proc_Copy.AutoSize = true;
+            this.Proc_Copy.Location = new System.Drawing.Point(440, 230);
+            this.Proc_Copy.Name = "Proc_Copy";
+            this.Proc_Copy.Size = new System.Drawing.Size(0, 13);
+            this.Proc_Copy.TabIndex = 11;
             // 
             // label_startTime
             // 
@@ -168,24 +167,32 @@
             this.label_startTime.Size = new System.Drawing.Size(0, 13);
             this.label_startTime.TabIndex = 12;
             // 
-            // label
+            // Proc_Time
             // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(440, 150);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(62, 13);
-            this.label.TabIndex = 13;
-            this.label.Text = "Process ID:";
+            this.Proc_Time.AutoSize = true;
+            this.Proc_Time.Location = new System.Drawing.Point(440, 150);
+            this.Proc_Time.Name = "Proc_Time";
+            this.Proc_Time.Size = new System.Drawing.Size(0, 13);
+            this.Proc_Time.TabIndex = 13;
+            // 
+            // start_time
+            // 
+            this.start_time.AutoSize = true;
+            this.start_time.Location = new System.Drawing.Point(440, 122);
+            this.start_time.Name = "start_time";
+            this.start_time.Size = new System.Drawing.Size(0, 13);
+            this.start_time.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 445);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.start_time);
+            this.Controls.Add(this.Proc_Time);
             this.Controls.Add(this.label_startTime);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Proc_Copy);
+            this.Controls.Add(this.Thread_count);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -217,10 +224,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Thread_count;
+        private System.Windows.Forms.Label Proc_Copy;
         private System.Windows.Forms.Label label_startTime;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label Proc_Time;
+        private System.Windows.Forms.Label start_time;
     }
 }
 

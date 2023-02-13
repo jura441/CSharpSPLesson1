@@ -45,6 +45,9 @@
             this.label_startTime = new System.Windows.Forms.Label();
             this.Proc_Time = new System.Windows.Forms.Label();
             this.start_time = new System.Windows.Forms.Label();
+            this.btn_close_process = new System.Windows.Forms.Button();
+            this.newProcessStart = new System.Windows.Forms.Button();
+            this.newProcessName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -59,7 +62,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 5000;
+            this.timer1.Interval = 20000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // textBox1
@@ -183,11 +186,42 @@
             this.start_time.Size = new System.Drawing.Size(0, 13);
             this.start_time.TabIndex = 14;
             // 
+            // btn_close_process
+            // 
+            this.btn_close_process.Location = new System.Drawing.Point(409, 273);
+            this.btn_close_process.Name = "btn_close_process";
+            this.btn_close_process.Size = new System.Drawing.Size(75, 23);
+            this.btn_close_process.TabIndex = 15;
+            this.btn_close_process.Text = "close";
+            this.btn_close_process.UseVisualStyleBackColor = true;
+            this.btn_close_process.Click += new System.EventHandler(this.btn_close_process_Click);
+            // 
+            // newProcessStart
+            // 
+            this.newProcessStart.Location = new System.Drawing.Point(396, 363);
+            this.newProcessStart.Name = "newProcessStart";
+            this.newProcessStart.Size = new System.Drawing.Size(161, 23);
+            this.newProcessStart.TabIndex = 16;
+            this.newProcessStart.Text = "Запустить новые процесс";
+            this.newProcessStart.UseVisualStyleBackColor = true;
+            this.newProcessStart.Click += new System.EventHandler(this.newProcessStart_Click);
+            // 
+            // newProcessName
+            // 
+            this.newProcessName.Location = new System.Drawing.Point(332, 318);
+            this.newProcessName.Name = "newProcessName";
+            this.newProcessName.Size = new System.Drawing.Size(215, 20);
+            this.newProcessName.TabIndex = 17;
+            this.newProcessName.TextChanged += new System.EventHandler(this.newProcessName_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 445);
+            this.Controls.Add(this.newProcessName);
+            this.Controls.Add(this.newProcessStart);
+            this.Controls.Add(this.btn_close_process);
             this.Controls.Add(this.start_time);
             this.Controls.Add(this.Proc_Time);
             this.Controls.Add(this.label_startTime);
@@ -229,6 +263,9 @@
         private System.Windows.Forms.Label label_startTime;
         private System.Windows.Forms.Label Proc_Time;
         private System.Windows.Forms.Label start_time;
+        private System.Windows.Forms.Button btn_close_process;
+        private System.Windows.Forms.Button newProcessStart;
+        private System.Windows.Forms.TextBox newProcessName;
     }
 }
 

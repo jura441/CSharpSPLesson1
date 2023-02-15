@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithNotepad", "WorkWith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessesApp", "ProcessesApp\ProcessesApp.csproj", "{193A02DA-7794-4690-8CFA-1FAC6587B339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThredasApp", "ThredasApp\ThredasApp.csproj", "{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThredasApp", "ThredasApp\ThredasApp.csproj", "{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klass_Lesson", "Klass_Lesson\Klass_Lesson.csproj", "{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

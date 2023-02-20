@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessesApp", "ProcessesAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThredasApp", "ThredasApp\ThredasApp.csproj", "{0FF8BFCE-5C56-45B3-9C92-9492072FAFF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klass_Lesson", "Klass_Lesson\Klass_Lesson.csproj", "{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klass_Lesson", "Klass_Lesson\Klass_Lesson.csproj", "{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCopyApp", "SPCopyApp\SPCopyApp.csproj", "{9F264B85-A2F1-427A-92CF-967BAB75F165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0A739E-AB2E-4C72-99B5-C0D8954BCD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F264B85-A2F1-427A-92CF-967BAB75F165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F264B85-A2F1-427A-92CF-967BAB75F165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F264B85-A2F1-427A-92CF-967BAB75F165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F264B85-A2F1-427A-92CF-967BAB75F165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

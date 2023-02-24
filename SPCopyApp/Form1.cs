@@ -4,6 +4,7 @@ namespace SPCopyApp
     public partial class Form1 : Form
     {
         byte[] data;
+        long lengthfile;
         public Form1()
         {
             InitializeComponent();
@@ -34,15 +35,19 @@ namespace SPCopyApp
         {
             /* Объявления переменных и открытие потоков */
             FileStream fsopen = new FileStream(tb_originPath.Text, FileMode.Open, FileAccess.Read, FileShare.Read, 100, FileOptions.Asynchronous);
-            byte[] b;
-            long lengthfile = fsopen.Length;
+            lengthfile = fsopen.Length;
 
+            // создаем массив чтения файла из countOperation частей
+            int countOperation = Int32.Parse(cb_threads.Items[cb_threads.SelectedIndex].ToString()); // количество частей на которые разбивается длина файла
+            
             //  Устанавливаем начальные значения прогресс бара         
             pb_copyProgress.Maximum = 1000;
             pb_copyProgress.Minimum = 0;
 
-            // создаем массив чтения файла из countOperation частей
-            int countOperation = 1000;
+            //  Устанавливаем начальные значения прогресс бара         
+            pb_copyProgress.Maximum = countOperation;
+            pb_copyProgress.Minimum = 0;
+
             long[] partsfilelength = new long[countOperation];
             for (int i = 0; i < countOperation; i++)
             {
@@ -50,14 +55,18 @@ namespace SPCopyApp
                 if (i == countOperation - 1)
                     partsfilelength[i] += lengthfile % countOperation;
             }
+
             //  Устанавливаем значения прогресс бара    
-            long pbvalue = 1;
-            if (lengthfile > 1000)
-                pbvalue = lengthfile / 1000;
-            for (int i = 0; i < 3; i++)
+            TestDel test = testing;
+
+            for (int i = 0; i < countOperation; i++)
             {
                 data = new byte[partsfilelength[i]];
-                fsopen.BeginRead(data, 0, data.Length, MessageBoxPrint, new MyStateObject(data, fsopen));
+                int pos = data.Length * i;
+                fsopen.BeginRead(data, 0, data.Length, MessageBoxPrint, new MyStateObject(data, fsopen, tb_targetPath.Text, pos));
+
+                pb_copyProgress.EndInvoke(pb_copyProgress.BeginInvoke(testing));
+
             }
             //IAsyncResult result;
             // Примеры не эффективной работы обработки ассинхрнных потоков
@@ -86,7 +95,7 @@ namespace SPCopyApp
                  //pb_copyProgress.Value = (int)(lengthfile / pbvalue); 
              }      */
             fsopen.Close();
-            fswrite.Close();
+           
 
         }
 
@@ -96,27 +105,45 @@ namespace SPCopyApp
             mystate.EndRead(asyncResult);
             mystate.Write();
        }
+        delegate void TestDel();
+
+
+        void testing()
+        {
+            pb_copyProgress.Value++;
+        }
     }
 
     class MyStateObject
     {
         byte[] _bytes;
         FileStream _fs;
-        FileStream fswrite;
+        FileStream _fswrite;
 
-        public MyStateObject(byte[] bytes, FileStream fs)
+        public MyStateObject(byte[] bytes, FileStream fs, string path, int position)
         {
             _bytes = bytes;
             _fs = fs;
-            fswrite = new FileStream(path.Text, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write, 100, FileOptions.Asynchronous);
+            _fswrite = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write, 100, FileOptions.Asynchronous);
+            _fswrite.Position = position;
         }
-        public void EndRead (IAsyncResult asyncResult)
+        public void EndRead(IAsyncResult asyncResult)
         {
             _fs.EndRead(asyncResult);
         }
+
         public void Write()
         {
-            MessageBox.Show(Encoding.UTF8.GetString(_bytes));
+            _fswrite.BeginWrite(_bytes, 0, _bytes.Length, CloseWrite, _fswrite);
+
+        }
+
+        private void CloseWrite(IAsyncResult asyncResult)
+        {
+            FileStream stream = (FileStream)asyncResult.AsyncState;
+            stream.EndWrite(asyncResult);
+
+            _fswrite.Close();
         }
     }
 }

@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPCopyApp", "SPCopyApp\SPCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncWork", "AsyncWork\AsyncWork.csproj", "{1AF9CA21-3876-4309-9B5A-A54388DBE41E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_3", "DZ_3\DZ_3.csproj", "{22DD3AE1-1827-4605-B359-9D6ACD490C78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DZ_3", "DZ_3\DZ_3.csproj", "{22DD3AE1-1827-4605-B359-9D6ACD490C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialAsync", "FactorialAsync\FactorialAsync.csproj", "{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{22DD3AE1-1827-4605-B359-9D6ACD490C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22DD3AE1-1827-4605-B359-9D6ACD490C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22DD3AE1-1827-4605-B359-9D6ACD490C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

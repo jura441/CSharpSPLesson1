@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DZ_3", "DZ_3\DZ_3.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactorialAsync", "FactorialAsync\FactorialAsync.csproj", "{96AE9E4D-72EB-4DAD-828E-40F94EC169C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam", "Exam\Exam.csproj", "{2E758CAA-3B3C-40B8-91BA-E1B0553C3AC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam", "Exam\Exam.csproj", "{2E758CAA-3B3C-40B8-91BA-E1B0553C3AC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ_Module1", "DZ_Module1\DZ_Module1.csproj", "{26F2FDAB-6E66-459D-8A0B-E4887FEEC545}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{2E758CAA-3B3C-40B8-91BA-E1B0553C3AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E758CAA-3B3C-40B8-91BA-E1B0553C3AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E758CAA-3B3C-40B8-91BA-E1B0553C3AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F2FDAB-6E66-459D-8A0B-E4887FEEC545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F2FDAB-6E66-459D-8A0B-E4887FEEC545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F2FDAB-6E66-459D-8A0B-E4887FEEC545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F2FDAB-6E66-459D-8A0B-E4887FEEC545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
